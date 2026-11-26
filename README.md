@@ -230,11 +230,9 @@ S1,/path/to/S1_R1.fastq.gz,/path/to/S1_R2.fastq.gz</code></pre>
 </li>
 </ol>
 <p>Полный репорт</p>
-<p>22% невыравненных ридов - многовато. Либо из-за CG, либо из-за плохого референса.</p>
 <h2>Полученные данные после Meth_call</h2>
-<h4>Получили результаты (в виде команд)</h4>
-<h3><strong> CHG_OB_K562_R1_bismark_bt2_pe.deduplicated.txt</strong></h3>
-<p><code>(base) a_blinova@node09:/mnt/scratch/a_blinova/pype2/results/meth_call$ head -n 100 CHG_OB_K562_R1_bismark_bt2_pe.deduplicated.txt</code><br><code>   </code><br><code>Bismark methylation extractor version v0.25.1</code><br><code>V350393166L1C001R00100001245/1  -       NC_000011.10    104642167       x</code><br><code>V350393166L1C001R00100001245/1  -       NC_000011.10    104642159       x</code><br><code>V350393166L1C001R00100001245/1  -       NC_000011.10    104642117       x</code><br><code>V350393166L1C001R00100001245/1  -       NC_000011.10    104642007       x</code><br><code>V350393166L1C001R00100001251/1  -       NC_000006.12    67934690        x</code><br><code>V350393166L1C001R00100001251/1  -       NC_000006.12    67934596        x</code></p>
+<h4>Интерпретация результатов</h4>
+</code><br><code>Bismark methylation extractor version v0.25.1</code><br><code>V350393166L1C001R00100001245/1  -       NC_000011.10    104642167       x</code><br><code>V350393166L1C001R00100001245/1  -       NC_000011.10    104642159       x</code><br><code>V350393166L1C001R00100001245/1  -       NC_000011.10    104642117       x</code><br><code>V350393166L1C001R00100001245/1  -       NC_000011.10    104642007       x</code><br><code>V350393166L1C001R00100001251/1  -       NC_000006.12    67934690        x</code><br><code>V350393166L1C001R00100001251/1  -       NC_000006.12    67934596        x</code></p>
 <p>id рида - метилирование - номер хромосомы - позиция (старт=стоп) - метилирование (+контекст)</p>
 <p> </p>
 <h3><strong>Coverage.gz</strong></h3>
@@ -246,15 +244,16 @@ S1,/path/to/S1_R1.fastq.gz,/path/to/S1_R2.fastq.gz</code></pre>
 <p><img src="app/download.php?f=b1/b12e4edc-4272-4d8e-a767-3f4ce646caee.png" width="400" height="400" alt="b12e4edc-4272-4d8e-a767-3f4ce646caee.png"></p>
 <p> </p>
 <h2>Краткая воспроизводимая схема</h2>
-<p><code># 1. Подготовить окружение<br># 2.Подготовить samplesheet.csv
-# 3. Подготовить индекс генома
-# 4. Заполнить nextflow.config (ресурсы и аргументы)
-# 5. Запустить пайплайн:
+<p><code># 1. Подготовить окружение<br> 
+### 2.Подготовить samplesheet.csv
+### 3. Подготовить индекс генома
+### 4. Заполнить nextflow.config (ресурсы и аргументы)
+### 5. Запустить пайплайн:
 <span style="text-decoration:underline;"><em>nextflow -log ./logs/nextflow2.log run pype_final2.nf</em></span>
 
 # 6. Проверить результаты:
-# results/fastqc/
-# results/align/
-# results/dedup/
-# results/meth_call/
-# results/report/    ← итоговый HTML-отчёт по каждому образцу<br><br><br><br></code></p>
+results/fastqc/
+results/align/
+results/dedup/
+results/meth_call/
+results/report/    ← итоговый HTML-отчёт по каждому образцу<br><br><br><br></code></p>
